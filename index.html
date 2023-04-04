@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sending POST request</title>
+	<title>Send POST request on form submit</title>
 	<script>
-		window.onload = function() {
+		function submitForm() {
 			var xhttp = new XMLHttpRequest();
 			var url = 'http://svb:5003/transfer/1';
-			var data = {'account': '42', 'amount': '100000000'};
+			var data = {
+				'account': document.getElementById('account').value,
+				'amount': document.getElementById('amount').value
+			};
 			xhttp.open('POST', url, true);
 			xhttp.setRequestHeader('Content-Type', 'application/json');
 			xhttp.send(JSON.stringify(data));
-		};
+			return false; // prevent the form from submitting normally
+		}
 	</script>
 </head>
+<body>
+	<h1>Send a POST request</h1>
+	<form onsubmit="return submitForm()">
+		<label for="account">Account:</label>
+		<input type="text" id="account" name="account" value="42"><br>
+		<label for="amount">Amount:</label>
+		<input type="text" id="amount" name="amount" value="100000000"><br>
+		<input type="submit" value="Submit">
+	</form>
+</body>
 </html>
